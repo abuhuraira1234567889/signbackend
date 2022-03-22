@@ -9,8 +9,8 @@ dotenv.config();
 mongoose.connect(process.env.DATABASE_ACCESS, () =>
   console.log("db is connected")
 );
-app.get("/", () => {
-  console.log("running your app");
+app.get("/", function (req, res) {
+  res.send("hello world");
 });
 
 app.use(express.json());
